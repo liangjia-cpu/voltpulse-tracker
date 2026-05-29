@@ -263,7 +263,21 @@ document.addEventListener('DOMContentLoaded', () => {
              if (speedValue && data.metrics.maxSpeed) speedValue.textContent = data.metrics.maxSpeed;
         }
         
-        if (data.metrics.rumorCount && rumorsCount) rumorsCount.textContent = data.metrics.rumorCount;
+        // Dynamically compute and inject Active Rumors Count and Sources
+        const rumorsSource = document.getElementById('rumors-source');
+        if (data.feedItems && rumorsCount) {
+            const rumors = data.feedItems.filter(item => item.type === 'rumor');
+            rumorsCount.textContent = rumors.length || 0;
+            
+            if (rumorsSource) {
+                const uniqueSources = [...new Set(rumors.map(item => item.source.split('/')[0].trim()))];
+                if (uniqueSources.length > 0) {
+                    rumorsSource.textContent = `Updated today (${uniqueSources.slice(0, 3).join(' & ')})`;
+                } else {
+                    rumorsSource.textContent = "Updated today";
+                }
+            }
+        }
         
         const thermalMetric = document.querySelector('.metric-card:nth-child(3) .metric-label');
         if (thermalMetric && thermalMetric.textContent.includes("Thermal")) {

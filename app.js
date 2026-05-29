@@ -250,9 +250,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. Initial Feed, Metrics, & Charts Injection
     if (data.metrics) {
-        if (data.metrics.maxSpeed) document.querySelector('.metric-card:nth-child(1) .metric-value').textContent = data.metrics.maxSpeed;
-        if (data.metrics.rumorCount) rumorsCount.textContent = data.metrics.rumorCount;
-        if (data.metrics.avgThermal) document.querySelector('.metric-card:nth-child(3) .metric-value').textContent = data.metrics.avgThermal;
+        const speedMetric = document.querySelector('.metric-card:nth-child(1) .metric-label');
+        if (speedMetric && speedMetric.textContent.includes("Speed")) {
+             const speedValue = speedMetric.parentElement.querySelector('.metric-value');
+             if (speedValue && data.metrics.maxSpeed) speedValue.textContent = data.metrics.maxSpeed;
+        }
+        
+        if (data.metrics.rumorCount && rumorsCount) rumorsCount.textContent = data.metrics.rumorCount;
+        
+        const thermalMetric = document.querySelector('.metric-card:nth-child(3) .metric-label');
+        if (thermalMetric && thermalMetric.textContent.includes("Thermal")) {
+             const thermalValue = thermalMetric.parentElement.querySelector('.metric-value');
+             if (thermalValue && data.metrics.avgThermal) thermalValue.textContent = data.metrics.avgThermal;
+        }
     }
 
     if (data.lastUpdated) {

@@ -13,6 +13,12 @@ window.chargingData = {
     },
     "chartData": [
         {
+            "label": "Pixel Snap",
+            "value": 25,
+            "type": "news",
+            "source": "Android Authority"
+        },
+        {
             "label": "Qi2 Standard Baseline",
             "value": 15,
             "type": "news",
@@ -35,12 +41,6 @@ window.chargingData = {
             "value": 25,
             "type": "rumor",
             "source": "ETNews Korea"
-        },
-        {
-            "label": "Pixel Snap",
-            "value": 23,
-            "type": "news",
-            "source": "Android Authority"
         }
     ],
     "feedItems": [

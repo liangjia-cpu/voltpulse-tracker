@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Wireless Charging Intelligence Hub</title>
+    <meta name="description" content="State-of-the-art dashboard tracking real-time wireless charging news, speed benchmarks, and product rumors.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animated Grid -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Main Container -->
+    <main class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">⚡</div>
+                <div class="logo-text">VoltPulse</div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="all" id="nav-all">
+                    <span class="btn-icon">🎛️</span> Overview
+                </button>
+                <button class="nav-btn" data-tab="news" id="nav-news">
+                    <span class="btn-icon">📰</span> News & Releases
+                </button>
+                <button class="nav-btn" data-tab="rumors" id="nav-rumors">
+                    <span class="btn-icon">🤫</span> Leaks & Rumors
+                </button>
+                <button class="nav-btn" data-tab="testing" id="nav-testing">
+                    <span class="btn-icon">📊</span> Performance Tests
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="status-dot pulsing"></span>
+                    <span class="status-text" id="collector-status">Auto-checking active</span>
+                </div>
+                <div class="last-updated">Updated: <span id="last-update-time">Just now</span></div>
+            </div>
+        </aside>
+
+        <!-- Dashboard Body -->
+        <section class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="search-bar-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-bar" placeholder="Search product rumors, benchmarks, news...">
+                </div>
+                
+                <div class="header-controls">
+                    <div class="badge premium-badge">Qi2 & MagSafe Tracking</div>
+                </div>
+            </header>
+
+            <!-- Metrics Summary Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card glass">
+                    <div class="metric-info">
+                        <span class="metric-label">Max Tracked Speed</span>
+                        <h2 class="metric-value">50W</h2>
+                        <span class="metric-trend up">↑ 25% from Qi1</span>
+                    </div>
+                    <div class="metric-icon-bg">⚡</div>
+                </div>
+                <div class="metric-card glass">
+                    <div class="metric-info">
+                        <span class="metric-label">Active Rumors</span>
+                        <h2 class="metric-value" id="rumors-count">--</h2>
+                        <span class="metric-trend neural">Updated today</span>
+                    </div>
+                    <div class="metric-icon-bg">🔮</div>
+                </div>
+                <div class="metric-card glass">
+                    <div class="metric-info">
+                        <span class="metric-label">Avg. Thermal Test</span>
+                        <h2 class="metric-value">38.4°C</h2>
+                        <span class="metric-trend down">↓ 1.2°C cooler</span>
+                    </div>
+                    <div class="metric-icon-bg">🌡️</div>
+                </div>
+            </div>
+
+            <!-- Dashboard Modules Layout -->
+            <div class="dashboard-body">
+                <!-- Data Feed Layout -->
+                <div class="feed-section glass">
+                    <div class="section-header">
+                        <h3 id="feed-title">Latest Intelligence Feed</h3>
+                        <div class="feed-filter-tags">
+                            <span class="filter-tag active" data-filter="all">All</span>
+                            <span class="filter-tag" data-filter="news">News</span>
+                            <span class="filter-tag" data-filter="rumors">Rumors</span>
+                            <span class="filter-tag" data-filter="testing">Testing</span>
+                        </div>
+                    </div>
+                    <div class="cards-feed" id="feed-container">
+                        <!-- Javascript injects cards here -->
+                    </div>
+                </div>
+
+                <!-- Performance Chart Section -->
+                <div class="analytics-section glass">
+                    <div class="section-header">
+                        <h3>Charging Profiles</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <!-- Custom CSS Analytics Bars -->
+                        <div class="custom-chart" id="chart-container">
+                            <!-- Javascript injects charts here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Detailed Intelligence -->
+    <div id="info-modal" class="modal-overlay hidden">
+        <div class="modal-content glass">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-body">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Inject Seed Data and App Logic -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

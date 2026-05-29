@@ -1,0 +1,29 @@
+name: Daily VoltPulse News Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Runs every day at 6:00 AM UTC
+  workflow_dispatch:      # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Generate and Update Daily News Data
+        run: python update_data.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.js
+          git diff-index --quiet HEAD || git commit -m "Automated daily VoltPulse news feed update"
+          git push

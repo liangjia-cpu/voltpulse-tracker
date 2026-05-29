@@ -121,7 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
             row.className = 'chart-row';
             row.innerHTML = `
                 <div class="chart-row-label">
-                    <span>${item.label}</span>
+                    <div>
+                        <span>${item.label}</span>
+                        <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px; opacity: 0.8;">Source: ${item.source}</div>
+                    </div>
                     <strong style="color: var(--text-primary);">${item.value}W</strong>
                 </div>
                 <div class="chart-bar-container">

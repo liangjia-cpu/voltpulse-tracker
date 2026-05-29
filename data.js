@@ -12,11 +12,11 @@ window.chargingData = {
         "avgThermal": "38.4°C"
     },
     "chartData": [
-        { "label": "Qi2 Standard Baseline", "value": 15, "type": "news" },
-        { "label": "MagSafe 2026 (Gen 3)", "value": 25, "type": "rumor" },
-        { "label": "Xiaomi HyperCharge Wireless", "value": 50, "type": "testing" },
-        { "label": "Samsung SuperFast Qi2+", "value": 25, "type": "rumor" },
-        { "label": "Pixel Stand Gen 3", "value": 23, "type": "news" }
+        { "label": "Qi2 Standard Baseline", "value": 15, "type": "news", "source": "WPC Official Announcement" },
+        { "label": "MagSafe 2026 (Gen 3)", "value": 25, "type": "rumor", "source": "DigiTimes Leaks" },
+        { "label": "Xiaomi HyperCharge Wireless", "value": 50, "type": "testing", "source": "ChargerLAB Analysis" },
+        { "label": "Samsung SuperFast Qi2+", "value": 25, "type": "rumor", "source": "ETNews Korea" },
+        { "label": "Pixel Stand Gen 3", "value": 23, "type": "news", "source": "Android Authority" }
     ],
     "feedItems": [
         {

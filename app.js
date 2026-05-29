@@ -256,34 +256,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 7. Initial Feed, Metrics, & Charts Injection
-    if (data.metrics) {
-        const speedMetric = document.querySelector('.metric-card:nth-child(1) .metric-label');
-        if (speedMetric && speedMetric.textContent.includes("Speed")) {
-             const speedValue = speedMetric.parentElement.querySelector('.metric-value');
-             if (speedValue && data.metrics.maxSpeed) speedValue.textContent = data.metrics.maxSpeed;
+    if (data.feedItems) {
+        // News & Releases
+        const newsCount = document.getElementById('news-count');
+        const newsSource = document.getElementById('news-source');
+        const newsItems = data.feedItems.filter(item => item.type === 'news');
+        if (newsCount) newsCount.textContent = newsItems.length || 0;
+        if (newsSource) {
+            const sources = [...new Set(newsItems.map(item => item.source.split('/')[0].trim()))];
+            if (sources.length > 0) newsSource.textContent = `Updated (${sources.slice(0, 2).join(' & ')})`;
         }
-        
-        // Dynamically compute and inject Active Rumors Count and Sources
+
+        // Active Rumors
+        const rumorsCount = document.getElementById('rumors-count');
         const rumorsSource = document.getElementById('rumors-source');
-        if (data.feedItems && rumorsCount) {
-            const rumors = data.feedItems.filter(item => item.type === 'rumor');
-            rumorsCount.textContent = rumors.length || 0;
-            
-            if (rumorsSource) {
-                const uniqueSources = [...new Set(rumors.map(item => item.source.split('/')[0].trim()))];
-                if (uniqueSources.length > 0) {
-                    rumorsSource.textContent = `Updated today (${uniqueSources.slice(0, 3).join(' & ')})`;
-                } else {
-                    rumorsSource.textContent = "Updated today";
-                }
-            }
+        const rumorItems = data.feedItems.filter(item => item.type === 'rumor');
+        if (rumorsCount) rumorsCount.textContent = rumorItems.length || 0;
+        if (rumorsSource) {
+            const sources = [...new Set(rumorItems.map(item => item.source.split('/')[0].trim()))];
+            if (sources.length > 0) rumorsSource.textContent = `Updated (${sources.slice(0, 2).join(' & ')})`;
         }
-        
-        const thermalMetric = document.querySelector('.metric-card:nth-child(3) .metric-label');
-        if (thermalMetric && thermalMetric.textContent.includes("Thermal")) {
-             const thermalValue = thermalMetric.parentElement.querySelector('.metric-value');
-             if (thermalValue && data.metrics.avgThermal) thermalValue.textContent = data.metrics.avgThermal;
+
+        // Performance Tests
+        const testsCount = document.getElementById('tests-count');
+        const testsSource = document.getElementById('tests-source');
+        const testItems = data.feedItems.filter(item => item.type === 'testing');
+        if (testsCount) testsCount.textContent = testItems.length || 0;
+        if (testsSource) {
+            const sources = [...new Set(testItems.map(item => item.source.split('/')[0].trim()))];
+            if (sources.length > 0) testsSource.textContent = `Updated (${sources.slice(0, 2).join(' & ')})`;
         }
+
+        // Archived Intel
+        const archiveCount = document.getElementById('archive-count');
+        const archiveItems = data.feedItems.filter(item => item.type === 'archive');
+        if (archiveCount) archiveCount.textContent = archiveItems.length || 0;
     }
 
     if (data.lastUpdated) {

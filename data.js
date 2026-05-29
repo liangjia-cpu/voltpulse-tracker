@@ -128,6 +128,34 @@ window.chargingData = {
                 "Capacity": "10,000mAh",
                 "Thickness": "12mm"
             }
+        },
+        {
+            "id": "fc-099",
+            "type": "archive",
+            "date": "2025-12-15",
+            "title": "Qi2 MPP (Magnetic Power Profile) Adoption Rates Surpass 40% in Flagship Market",
+            "preview": "End-of-year industry auditing data confirmed that over 40% of all premium smartphones shipped in Q4 included native magnetic ring profile arrays conforming to WPC Qi2 parameters.",
+            "fullText": "End-of-year industry auditing data confirmed that over 40% of all premium smartphones shipped in Q4 included native magnetic ring profile arrays conforming to WPC Qi2 parameters.",
+            "source": "WPC Strategy Analytics",
+            "url": "https://www.wirelesspowerconsortium.com",
+            "metrics": {
+                "Adoption Rate": "40%",
+                "Market": "Flagship"
+            }
+        },
+        {
+            "id": "fc-098",
+            "type": "archive",
+            "date": "2025-11-02",
+            "title": "GaN (Gallium Nitride) Charging Blocks Shrink Qi2 Stand Footprints by 30%",
+            "preview": "First-generation commercial implementations combining GaN semiconductors with high-frequency resonant coils entered mass supply chains this month.",
+            "fullText": "First-generation commercial implementations combining GaN semiconductors with high-frequency resonant coils entered mass supply chains this month.",
+            "source": "ETNews Korea",
+            "url": "https://www.etnews.com",
+            "metrics": {
+                "Footprint Reduction": "30%",
+                "Tech": "GaN + Resonant"
+            }
         }
     ]
 };

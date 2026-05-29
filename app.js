@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switch(type) {
             case 'rumor': return 'badge-rumor';
             case 'testing': return 'badge-testing';
+            case 'archive': return 'badge-archive';
             default: return 'badge-news';
         }
     };
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switch(type) {
             case 'rumor': return 'Rumor/Leak';
             case 'testing': return 'Performance Test';
+            case 'archive': return 'Archived Report';
             default: return 'News Report';
         }
     };
@@ -68,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (currentTab === 'news') feedTitle.textContent = 'Hardware & Tech News';
         else if (currentTab === 'rumors') feedTitle.textContent = 'Rumors & Supply Chain Leaks';
         else if (currentTab === 'testing') feedTitle.textContent = 'Independent Testing Lab';
+        else if (currentTab === 'archive') feedTitle.textContent = '6-Month Intelligence Archive';
 
         if (filtered.length === 0) {
             feedContainer.innerHTML = `

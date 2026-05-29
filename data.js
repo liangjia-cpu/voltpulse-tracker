@@ -80,7 +80,7 @@ window.chargingData = {
             "preview": "Supply chain leaks from Taiwan suggest Apple's upcoming ecosystem includes an upgraded transmitter capable of delivering up to 5W of power across short air gaps, ideal for AirPods and Apple Watch.",
             "fullText": "According to supply chain informants reporting to DigiTimes, Apple is actively testing an upgraded 'MagSafe 3' protocol for their next generation hardware. The breakthrough feature relies on highly focused resonant coupling, enabling low-wattage (5W) charging across distances up to 10cm. This is intended to seamlessly trickle-charge peripherals like the Apple Watch Ultra and AirPods Pro without direct surface contact.",
             "source": "DigiTimes / Leaker ' yeux1122 '",
-            "url": "#",
+            "url": "https://www.digitimes.com",
             "metrics": {
                 "Range": "10cm",
                 "Peripherals": "5W"
@@ -94,7 +94,7 @@ window.chargingData = {
             "preview": "Independent laboratory testing showed Xiaomi's active cryo-cooling pad kept peak battery temperatures under 39\u00b0C while continuously pumping 50W of wireless power.",
             "fullText": "Comprehensive thermal stress-testing of Xiaomi's newly released 50W HyperCharge Wireless Pad revealed remarkable thermal management. Using an integrated semiconductor cooling block and micro-fan, the unit maintained surface and battery temperatures at a stable 38.4\u00b0C throughout a 0-100% charging cycle on the Xiaomi 16 Ultra. This beats comparable 25W solutions which peaked near 42\u00b0C.",
             "source": "ChargerLAB Analysis",
-            "url": "#",
+            "url": "https://www.chargerlab.com",
             "metrics": {
                 "Peak Temp": "38.4\u00b0C",
                 "Speed": "50W",
@@ -109,7 +109,7 @@ window.chargingData = {
             "preview": "CAD renders of the upcoming Pixel 11 Pro showcase an altered coil architecture compatible with magnetic ring accessories, bumping charging speeds by 30%.",
             "fullText": "Alleged CAD renders and engineering validation test (EVT) sheets obtained by Android Authority suggest Google is fully adopting the Magnetic Power Profile for the Pixel 11 lineup. The data details a highly dense 38-magnet array embedded in the phone's back panel. Additional power management IC details reveal support for speeds reaching up to 30W on proprietary stands.",
             "source": "Android Authority Leaks",
-            "url": "#",
+            "url": "https://www.androidauthority.com",
             "metrics": {
                 "Speed": "30W",
                 "Standard": "Qi2 MPP"

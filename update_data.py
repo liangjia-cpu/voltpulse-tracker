@@ -80,8 +80,8 @@ feed = data.get("feedItems", [])
 # Insert only if today doesn't already have this exact news title
 if not any(item["title"] == new_item["title"] for item in feed):
     feed.insert(0, new_item)
-    # Keep up to 8 of the latest news items to avoid file bloating
-    data["feedItems"] = feed[:8]
+    # Keep up to 500 items to dynamically store and archive over 6 months of daily news
+    data["feedItems"] = feed[:500]
 
     # Update active rumors count metric
     rumors = [item for item in feed if item["type"] == "rumor"]

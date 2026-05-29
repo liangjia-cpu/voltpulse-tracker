@@ -56,7 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Filter by Tab Type AND Search Query
         const filtered = data.feedItems.filter(item => {
-            const matchesTab = (currentTab === 'all' || item.type === currentTab);
+            const matchesTab = (
+                currentTab === 'all' || 
+                (currentTab === 'archive' && ['archive', 'news', 'rumors', 'testing'].includes(item.type)) || 
+                item.type === currentTab
+            );
             const matchesSearch = (
                 item.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
                 item.preview.toLowerCase().includes(currentSearch.toLowerCase()) ||

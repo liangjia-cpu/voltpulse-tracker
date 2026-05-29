@@ -37,7 +37,7 @@ window.chargingData = {
             "source": "ETNews Korea"
         },
         {
-            "label": "Pixel Stand Gen 3",
+            "label": "Pixel Snap",
             "value": 23,
             "type": "news",
             "source": "Android Authority"
